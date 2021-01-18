@@ -50,3 +50,6 @@ gradlew test -Dselenide.headless=true -Durlbd=jdbc:mysql://localhost:3306/app --
 ```
 gradlew test -Dselenide.headless=true -Durlbd=jdbc:postgresql://localhost:5432/app --info
 ```
+
+5. При необходимости отключения SUT, находясь в терминале Intellij IDEA, нажать клавиши `CTRL+C`.
+6. При необходимости отключения контейнеров ввести в терминале Intellij IDEA команду `docker-compose down`.

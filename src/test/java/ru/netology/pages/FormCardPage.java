@@ -3,6 +3,7 @@ package ru.netology.pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.CardInfo;
+import ru.netology.utils.ui.DataHelper;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.withText;
@@ -52,7 +53,7 @@ public class FormCardPage {
     }
 
     public void codeFieldIsEmptyOperation() {
-        CardInfo card = DataHelper.getValidCardInfoAPPROVED();
+        CardInfo card = DataHelper.getValidCardInfoApproved();
         cardNumberField.$("input").setValue(card.getNumber());
         monthField.$("input").setValue(card.getMonth());
         yearField.$("input").setValue(card.getYear());
@@ -61,12 +62,12 @@ public class FormCardPage {
     }
 
     public void codeWithSpecialSymbolsOperation() {
-        CardInfo card = DataHelper.getValidCardInfoAPPROVED();
+        CardInfo card = DataHelper.getValidCardInfoApproved();
         cardNumberField.$("input").setValue(card.getNumber());
         monthField.$("input").setValue(card.getMonth());
         yearField.$("input").setValue(card.getYear());
         usernameField.$("input").setValue(card.getUser());
-        cvcField.$("input").setValue(DataHelper.getStringIsSpecialSymbols(3));
+        cvcField.$("input").setValue(DataHelper.getSpecialSymbols(3));
         processButton.click();
     }
 }
